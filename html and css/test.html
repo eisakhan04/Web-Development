@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+span {
+  display: non;
+}
+h1.hidden {
+  visibility: hidden;
+}
+
+
+/* max-width */
+div.width1 {
+  width: 500px;
+  margin: auto;
+  border: 3px solid #73AD21;
+}
+
+div.width2 {
+  max-width: 600px;
+  margin: auto;
+  border: 3px solid #73AD21;
+}
+
+/* position */
+
+div.static {
+    position: static;
+    border: 3px solid #73AD21;
+  }
+
+  div.relative {
+    position: relative;
+    border: 3px solid #73AD21;
+  }
+
+  div.absolute {
+    position: absolute;
+    border: 3px solid #73AD21;
+  }
+
+  div.fixed {
+    position: fixed;
+    border: 3px solid #73AD21;
+  }
+
+
+
+
+</style>
+
+
+
+</head>
+<body>
+    <h1 class="hidden">This is a hidden heading</h1>
+<h1>Display span elements as block elements</h1>
+
+<span>A display property with</span> <span>a value of "block" results in</span> <span>a line break between each span elements.</span>
+
+<!-- max-width -->
+<h2>max width</h2>
+
+<div class="width1">this is width</div>
+<br>
+
+<div class="width2">This is max-width</div>
+
+<p><strong>Tip:</strong> Drag the browser window to smaller than 500px wide, to see the difference between 
+the two divs!</p>
+
+
+
+
+<!-- position -->
+  
+  <h2>position: static;</h2>
+  
+  <p>An element with position: static; is not positioned in any special way; it is always positioned according to the normal flow of the page:</p>
+  
+  <div class="static">
+  This div element has position: static;
+  </div>
+
+  <div class="relative">
+    This div element has position: relative;
+    </div>
+    <div class="absolute">
+        This div element has position: absolute;
+        </div>   
+
+        <div class="fixed">
+            This div element has position: fixed;
+            </div> 
+
+<br>
+<br>
+
+
+
+
+
+</body>
+</html>

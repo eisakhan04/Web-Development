@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Over Flow</title>
+    <style>
+        .box {
+               width: 250px;
+               height: 250px;
+               border: 3px solid red;
+               overflow-x: scroll;
+               overflow-y: auto;
+               overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <p> <b>visible</b> - Default. The overflow is not clipped. The content renders outside the element's box
+        <b> hidden</b> - The overflow is clipped, and the rest of the content will be invisible
+         <b>scroll</b> - The overflow is clipped, and a scrollbar is added to see the rest of the content
+        <b> auto</b> - Similar to scroll, but it adds scrollbars only when necessary</p>
+    <h1>M Eisa : Overflow CSS </h1>
+    <div class="box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Maxime nostrum illo quasi in, unde quod reiciendis temporibus vero officia laudantium soluta quo accusantium,
+          itaque, rerum modi deleniti minus tenetur placeat?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Maxime nostrum illo quasi in, unde quod reiciendis temporibus vero officia laudantium soluta quo accusantium,
+          itaque, rerum modi deleniti minus tenetur placeat?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Maxime nostrum illo quasi in, unde quod reiciendis temporibus vero officia laudantium soluta quo accusantium,
+          itaque, rerum modi deleniti minus tenetur placeat?
+        </div>
+</body>
+</html>

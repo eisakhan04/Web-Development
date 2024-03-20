@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation with javascript</title>
+    <style>
+        body{
+            background-color: #3498db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container{
+            background-color: white;
+            padding: 50px;
+            text-align: center;
+
+        }
+        h2{
+            margin: 0px 0px 10px 0px;
+        }
+        input
+        {
+            width: 200px;
+            margin: 10px 0px;
+            padding: 10px;
+        }
+        .btn{
+            width: 220px;
+            background-color:blue ;
+            border: 0px;
+            color: white;
+            height: 30px;
+        }
+        .error{
+            color: red;
+            text-align: left;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <form id="myFormId">
+          
+          <input type="text" name="username" id="userName" placeholder="Enter your username"><br>
+          <p id="userError" class="error"></p>
+      
+         
+          <input type="password" name="password" id="password" placeholder="Enter your password"><br>
+          <p id="passError" class="error"></p>
+      
+          <button class="btn" id="submit">Submit</button>
+        </form>
+      </div>
+      
+   <script>
+    let userName = document.getElementById("userName");
+    let password = document.getElementById("password");
+    let flag = 1;
+
+    const submit = document.querySelector("#submit");
+
+    submit.addEventListener("click", validateForm, false);
+
+    function validateForm($e)
+    {
+        $e.preventDefault();
+
+        if(userName.value == "")
+        {
+            document.getElementById("userError").innerHTML ="User name is Empty ";
+             flag = 0;
+        }
+        else if(userName.value.length < 5)
+        {
+            document.getElementById("userError").innerHTML = "User name is Required  min 5 chacter";
+            flag = 0;
+        }
+        else{
+            document.getElementById("userError").innerHTML = "";
+             flag = 1;
+        }
+
+        if(password.value == "")
+        {
+            document.getElementById("passError").innerHTML = "Password is Empty";
+            flag = 0;
+        }
+        else{
+            document.getElementById("passError").innerHTML = " ";
+             flag = 1;
+        }
+
+        const form = document.getElementById('myFormId');
+
+       const dd =  Object.values(form).reduce((obj,field) => { obj[field.name] = field.value; return obj }, {});
+
+        console.log(dd);
+
+      if(flag)
+      {
+        return true;
+
+      }
+      else{
+        return false;
+      }
+  
+    }
+   </script>
+</body>
+</html>

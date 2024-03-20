@@ -1,0 +1,84 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Data</title>
+    <!-- Bootstrap CSS offline -->
+    <link rel="stylesheet" href="http://localhost/Softwear%20House/html%20and%20css/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+
+    
+
+   <!-- javaScript offline -->
+    <script> src= "http://localhost/Softwear%20House/Project/bootstrap-5.3.2-dist/js/bootstrap.min.js"</script>
+
+
+</head>
+<body>
+<div class="container mt-5">
+    <h2>View Data</h2>
+
+    <div class="m3">
+             <input type="text" id="search" class="form-control" name="search" placeholder=" Search by username ">
+    </div>
+
+    <table  class="table table-striped container">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>First_Name</th>
+                <th>Last_Name</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+                <th>Register_on</th>
+                <th>profile_pic</th>
+                <!-- Add more table headers as needed -->
+            </tr>
+        </thead>
+        <tbody id="marksTableBody">
+ 
+
+        </tbody>
+    </table>
+</div>
+
+<!-- // Jquery offline  -->
+<script src="http://localhost/Softwear%20House/Project/bootstrap-5.3.2-dist/Jquey/JQuery.js"></script>
+<script>
+    $(document).ready(function () {
+        // Function to perform AJAX live search
+        function liveSearch() {
+            var searchValue = $("#search").val();
+
+            $.ajax({
+                type: "POST",
+                url: "ajx.php",
+                data: { search: searchValue },
+                success: function (data) {
+                    $("#marksTableBody").html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error("AJAX Error: " + xhr.responseText);
+                }
+            });
+        }
+
+        // Call liveSearch function on keyup event in the search input
+        $("#search").on("keyup", function () {
+            liveSearch();
+        });
+
+        // Initial call to populate the table on page load
+        liveSearch();
+    });
+</script>
+
+<script> src= "http://localhost/Softwear%20House/Project/bootstrap-5.3.2-dist/js/bootstrap.min.js"</script>
+</body>
+</html>
